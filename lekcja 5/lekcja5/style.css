@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 15%);
+}
+
+.postcard {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background: linear-gradient(
+    to bottom,
+    hsl(210, 80%, 60%),
+    hsl(30, 90%, 70%)
+  );
+}
+
+.sun {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  width: 80px;
+  height: 80px;
+  background-color: hsl(45, 100%, 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 20px hsl(45, 100%, 80%);
+  /* TODO: sun color experiment */
+}
+
+.hills {
+  position: absolute;
+  bottom: 30%;
+  left: -10%;
+  width: 120%;
+  height: 45%;
+  background: radial-gradient(
+    ellipse 120% 60% at 50% 100%,
+    hsl(120, 50%, 35%),
+    hsl(120, 40%, 25%)
+  );
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+}
+
+.water {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32%;
+  background: linear-gradient(
+    to bottom,
+    hsla(210, 70%, 50%, 0.85),
+    hsla(210, 60%, 30%, 1)
+  );
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: Georgia, serif;
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.7),
+    0 0 20px hsl(45, 100%, 60%);
+  /* TODO: text color experiment */
+}
+
+<div class="postcard">
+  <div class="sky"></div>
+  <div class="sun"></div>
+
+  <div class="star star1">✦</div>
+  <div class="star star2">✧</div>
+  <div class="star star3">✦</div>
+
+  <div class="hill hill-back"></div>
+  <div class="hill hill-front"></div>
+
+  <div class="water">
+    <div class="reflection"></div>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+  </div>
+
+  <div class="caption">KATSEYE ✧ DREAMSCAPE</div>
+</div>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.postcard {
+  width: 360px;
+  height: 440px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f8b9df;
+  font-family: Arial, sans-serif;
+}
+
+.sky {
+  position: absolute;
+  inset: 0 0 35%;
+  background: linear-gradient(
+    #8bd8f5, #d8b9ff 58%, #ffb6d8
+  );
+}
+
+.sun {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #fff3c4;
+  top: 85px;
+  left: 138px;
+  box-shadow: 0 0 35px #ffe4f5,
+              0 0 75px #ffb6e6;
+}
+
+.star {
+  position: absolute;
+  color: white;
+  text-shadow: 0 0 12px white;
+  z-index: 5;
+}
+
+.star1 { top: 55px; left: 55px; font-size: 25px; }
+.star2 { top: 125px; right: 48px; font-size: 32px; }
+.star3 { top: 190px; left: 95px; font-size: 18px; }
+
+.hill {
+  position: absolute;
+  width: 120%;
+  height: 150px;
+  border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+  top: 220px;
+  left: -35%;
+  background: #a78be7;
+  transform: rotate(-8deg);
+}
+
+.hill-front {
+  top: 260px;
+  right: -35%;
+  background: #7168bd;
+  transform: rotate(8deg);
+}
+
+.water {
+  position: absolute;
+  bottom: 0;
+  height: 125px;
+  width: 100%;
+  background: linear-gradient(
+    #f6a9d6, #8acde9 75%, #b5e9f5
+  );
+}
+
+.reflection {
+  position: absolute;
+  top: 8px;
+  left: 42%;
+  width: 60px;
+  height: 95px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fff0c5 0 3px,
+    transparent 3px 11px
+  );
+  opacity: .85;
+  filter: drop-shadow(0 0 5px #fff);
+}
+
+.wave {
+  position: absolute;
+  height: 9px;
+  border-radius: 50%;
+  border-top: 2px solid #fff0fb;
+  opacity: .8;
+}
+
+.wave1 { width: 110px; top: 45px; left: 25px; }
+.wave2 { width: 145px; top: 78px; right: 15px; }
+
+.caption {
+  position: absolute;
+  z-index: 10;
+  bottom: 17px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-shadow: 0 2px 8px #8063aa;
+}
+
